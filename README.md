@@ -2,14 +2,14 @@
 ![winnie-the-pooh-pooh](https://github.com/user-attachments/assets/64bc52e5-92bc-4800-ac5f-946360d274c8)
 
 ## Objective
-The Detection Lab project aimed to establish a controlled environment for monitoring and analyzing live cyber attacks occurring globally. The primary focus was to ingest and analyze logs within a Security Information and Event Management (SIEM) system, providing insights into real-world attack patterns and enhancing defensive strategies.
+The Detection Lab project aimed to establish a controlled environment for monitoring and analyzing live cyber attacks occurring globally. The primary focus was to ingest and analyze logs within a Security Information and Event Management (SIEM) system, providing insights into real-world attack patterns and enhancing defensive strategies. This project aims to develop practical skills in cloud security, ensuring that the configured systems effectively detect and respond to potential threats. Ultimately, the objective is to validate the security configurations through testing, ensuring a robust security posture in a cloud environment.
 
 ## Skills Learned
 - Advanced understanding of SIEM concepts and practical application.
-- Proficiency in analyzing and interpreting network logs.
+- Proficiency in analyzing and interpreting logs.
 - Ability to generate and recognize attack signatures and patterns.
 - Enhanced knowledge of network protocols and security vulnerabilities.
-- Development of critical thinking and problem-solving skills in cybersecurity.
+- Development of critical thinking and problem-solving skills in security.
 
 ## Steps
 
