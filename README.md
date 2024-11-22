@@ -89,3 +89,15 @@ The Detection Lab project aimed to establish a controlled environment for monito
 - Check the Analytics page for the new rule you created.
 - Monitor the Incidents page to see if a new alert appears.
 - Confirm that the rule captures successful login events and generates alerts accordingly.
+
+
+
+
+
+![image](https://github.com/user-attachments/assets/926fe3aa-950b-4e4c-b316-0956b1ed9d7b)
+
+![image](https://github.com/user-attachments/assets/8272dea4-6d48-4ab5-a1e5-582f2e79dba1)
+
+![image](https://github.com/user-attachments/assets/30b1dba8-3394-4dab-b9b3-e02814de7f22)
+
+
