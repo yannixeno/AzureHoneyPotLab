@@ -1,4 +1,5 @@
 # Azure Sentinel Honeypot Lab
+![winnie-the-pooh-pooh](https://github.com/user-attachments/assets/64bc52e5-92bc-4800-ac5f-946360d274c8)
 
 ## Objective
 The Detection Lab project aimed to establish a controlled environment for monitoring and analyzing live cyber attacks occurring globally. The primary focus was to ingest and analyze logs within a Security Information and Event Management (SIEM) system, providing insights into real-world attack patterns and enhancing defensive strategies.
