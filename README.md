@@ -2,7 +2,7 @@
 ![winnie-the-pooh-pooh](https://github.com/user-attachments/assets/64bc52e5-92bc-4800-ac5f-946360d274c8)
 
 ## Objective
-The Detection Lab project aimed to establish a controlled environment for monitoring and analyzing live cyber attacks occurring globally. The primary focus was to ingest and analyze logs within a Security Information and Event Management (SIEM) system, providing insights into real-world attack patterns and enhancing defensive strategies. This project aims to develop practical skills in cloud security, ensuring that the configured systems effectively detect and respond to potential threats. Ultimately, the objective is to validate the security configurations through testing, ensuring a robust security posture in a cloud environment.
+This Honey Pot Lab aimed to establish a controlled environment for monitoring and analyzing live cyber attacks occurring globally. The primary focus was to ingest and analyze logs within a Security Information and Event Management (SIEM) system, providing insights into real-world attack patterns and enhancing defensive strategies. This project was to develop my practical skills in cloud security, ensuring that the configured systems effectively detect and respond to potential threats. Ultimately, the objective is to validate the security configurations through testing, ensuring a robust security posture in a cloud environment.
 
 ## Skills Learned
 - Advanced understanding of SIEM concepts and practical application.
@@ -81,8 +81,10 @@ The Detection Lab project aimed to establish a controlled environment for monito
   - Set an alert threshold so that an alert is generated after each successful login attempt.
   - Review and save the rule to activate it.
 
+![388803337-64d84a28-caf1-436a-94c5-81f869c59604](https://github.com/user-attachments/assets/8d749cf5-d13f-40f1-a017-ad73c87bc410)
 
-    ![image](https://github.com/user-attachments/assets/64d84a28-caf1-436a-94c5-81f869c59604)
+
+
 
 
 ### Step 6: Test and Verify Sentinel Alerts
@@ -100,4 +102,117 @@ The Detection Lab project aimed to establish a controlled environment for monito
 
 ![image](https://github.com/user-attachments/assets/30b1dba8-3394-4dab-b9b3-e02814de7f22)
 
+# What Did I Find?
 
+## 1. Frequent Security Events
+- The dataset predominantly consists of EventID 4625, which corresponds to "An account failed to log on." This indicates repeated failed authentication attempts.
+- These events show definite security risks, such as brute-force attacks & unauthorized access attempts.
+
+## 2. Targeted Accounts
+- Accounts such as `ADMINISTRATOR`, `DELL`, and `VMADMIN` were repeatedly targeted. These accounts hold elevated privileges, making them attractive to attackers.
+- The `TargetAccount` and `TargetUserName` reveal a focus on both specific named accounts and more generic account types, implying varying levels of targeting strategy.
+
+## 3. IP Address Analysis
+- The `IpAddress` column revealed numerous sources for failed login attempts. Notable findings include:
+  - Diverse IP ranges suggest attempts from different geographic locations, indicating the use of botnets or distributed attack tools.
+  - A lack of IP addresses for some entries imply intentional masking by attackers.
+    
+# Malicious IP Address's I found
+
+| **IP Address**      | **Hostname**                                  | **Country**       | **Region**         | **City**              | **Provider**                                   | **ASN**   |
+|---------------------|----------------------------------------------|-------------------|--------------------|-----------------------|-----------------------------------------------|-----------|
+| 103.142.87.50       |                                              | Hong Kong         |                    |                       | YISU CLOUD LTD                                | 138152    |
+| 103.227.210.199     |                                              | India             | Maharashtra        | Mumbai                | SRMAK TECHNOLOGICAL SYSTEM PRIVATE LIMITED    | 151106    |
+| 104.210.220.129     |                                              | United States     | Texas              | San Antonio           | MICROSOFT-CORP-MSN-AS-BLOCK                  | 8075      |
+| 116.228.169.194     |                                              | China             | Shanghai           | Shanghai              | China Telecom Group                           | 4812      |
+| 120.133.88.0        |                                              | China             |                    |                       | IDC, China Telecommunications Corporation     | 23724     |
+| 121.146.41.34       |                                              | South Korea       | Ulsan              | Jung-gu              | Korea Telecom                                 | 4766      |
+| 141.95.82.247       | ip247.ip-141-95-82.eu                        | France            |                    |                       | OVH SAS                                       | 16276     |
+| 141.95.82.248       | ip248.ip-141-95-82.eu                        | France            |                    |                       | OVH SAS                                       | 16276     |
+| 141.98.83.170       |                                              | Panama            |                    |                       | Flyservers S.A.                               | 209588    |
+| 144.217.111.52      | ip52.ip-144-217-111.net                      | Canada            | Quebec             | Beauharnois           | OVH SAS                                       | 16276     |
+| 157.55.138.57       |                                              | United States     | Illinois           | Chicago               | MICROSOFT-CORP-MSN-AS-BLOCK                  | 8075      |
+| 159.242.234.232     |                                              | Germany           | Hesse              | Frankfurt am Main     | AVAST Software s.r.o.                        | 198605    |
+| 160.179.55.145      |                                              | Morocco           | Casablanca         | Casablanca            | MT-MPLS                                       | 36903     |
+| 162.210.245.77      |                                              | United States     | Virginia           | Ashburn               | SNEAKER-SERVER                                | 397651    |
+| 177.34.6.189        | b12206bd.virtua.com.br                       | Brazil            | Mato Grosso do Sul | Campo Grande          | Claro NXT Telecomunicacoes Ltda              | 28573     |
+| 177.4.107.235       | 177-4-107-235.user3p.v-tal.net.br            | Brazil            | Paraná             | Pinhais               | V tal                                        | 8167      |
+| 179.0.57.108        | 179-0-57-108.zentelecom.com.br               | Brazil            | Santa Catarina     | Florianópolis         | ZEN INTERNET E TELECOMUNICACAO EIRELI        | 271498    |
+| 181.177.12.111      | 181-177-12-111.fiberway.com.ar               | Argentina         | Jujuy              | San Salvador de Jujuy | TELESISTEMA S.R.L.                           | 264642    |
+| 185.170.144.185     |                                              | Estonia           |                    |                       | Xhost Internet Solutions Lp                  | 197414    |
+| 186.75.215.94       |                                              | Panama            | Provincia de Panamá| Panama City           | Cable & Wireless Panama                      | 11556     |
+| 189.112.15.18       | 189-112-015-018.static.ctbctelecom.com.br    | Brazil            | Rio de Janeiro     | Rio de Janeiro        | ALGAR TELECOM SA                              | 16735     |
+| 193.122.94.68       |                                              | Saudi Arabia      | Eastern Province   |                       | ORACLE-BMC-31898                              | 31898     |
+| 194.180.49.161      |                                              | Bulgaria          |                    |                       | MEVSPACE sp. z o.o.                          | 201814    |
+| 20.235.247.188      |                                              | India             | Maharashtra        | Pune                  | MICROSOFT-CORP-MSN-AS-BLOCK                  | 8075      |
+| 203.189.135.33      | mydsl-135-33.online.com.kh                   | Cambodia          | Phnom Penh         | Phnom Penh            | Cogetel Online, Cambodia, ISP                | 23673     |
+| 206.189.208.53      | prod-beryllium-sfo2-51.do.binaryedge.ninja   | United States     | California         | Santa Clara           | DIGITALOCEAN-ASN                             | 14061     |
+| 218.24.151.212      |                                              | China             | Liaoning           | Shenyang              | CHINA UNICOM China169 Backbone               | 4837      |
+| 218.90.122.42       |                                              | China             | Shanghai           | Shanghai              | Chinanet                                     | 4134      |
+| 31.43.185.66        |                                              | Ukraine           |                    |                       | FOP Dmytro Nedilskyi                          | 211736    |
+| 36.134.25.206       |                                              | China             |                    |                       | China Mobile Communications Group Co., Ltd.  | 9808      |
+| 79.124.56.98        | marathon.witud.us                            | Bulgaria          |                    |                       | Tamatiya EOOD                                | 50360     |
+| 87.251.75.64        |                                              | Russia            |                    |                       | Xhost Internet Solutions Lp                  | 208091    |
+| 92.255.57.161       |                                              | Hong Kong         |                    |                       | Chang Way Technologies Co. Limited           | 207566    |
+| 94.102.49.171       | no-reverse-dns-configured.com                | The Netherlands   | North Holland      | Amsterdam             | IP Volume inc                                | 202425    |
+| 94.232.42.99        |                                              | Russia            | Perm Krai          | Perm                  | Xhost Internet Solutions Lp                  | 208091    |
+| 94.76.207.192       | 94-76-207-192.static.as29550.net             | United Kingdom    |                    |                       | Simply Transit Ltd                           | 29550     |
+
+Just getting the ip's wasn't good enough for me - I wanted a visual display of the attacks on a world map & the charted out.
+
+![image](https://github.com/user-attachments/assets/a1329c96-c20d-4f73-a2cc-d36df6ab5a4c)
+
+![image](https://github.com/user-attachments/assets/a1b9e138-d593-4551-932d-8233eaee8bf7)
+
+## 4. Temporal Trends
+- By examining the timestamps in `TimeGenerated [UTC]` and `TimeCollected [UTC]`, events can be analyzed for spikes in activity.
+- Peaks in failed login attempts may align with specific times of day, suggesting targeted attacks during presumed off-hours.
+
+Peak Activity: The highest number of events occurred at 17:00 UTC, with 774 recorded events.
+
+Other Busy Periods:
+18:00 UTC (671 events)
+19:00 UTC (602 events)
+16:00 UTC (587 events)
+
+![image](https://github.com/user-attachments/assets/6b28df34-e2c6-4784-ae90-29ee3f974ebf)
+
+### Observations
+- There is a noticeable increase in failed login attempts during the late afternoon to early evening UTC time (16:00–19:00), suggesting targeted activity during these hours.
+These times could correlate to presumed "off-hours" for some geographic regions, indicating attackers might aim to exploit periods when monitoring is less rigorous.
+---
+
+# Lessons learned from this
+
+## 1. Strengthening Account Security
+- The prevalence of failed login attempts targeting administrator-level accounts underlines the need for stringent security measures:
+  - Enforce strong password policies to prevent brute force attacks.
+  - Implement multi-factor authentication (MFA) adding an extra layer of defense.
+
+    (This was the password I opted to use for the VM & how fast it would take for attackers to crack it)
+    
+  ![image](https://github.com/user-attachments/assets/e65dffc5-db63-4a57-a79e-2ba215b6d859)
+
+## 2. Improving Network Security
+- Most logon attempts were of type `3 - Network`, which indicated a need to secure external access points:
+  - The use of firewalls and geo-blocking to limit access from suspicious or unexpected locations is a good start.
+  - Regularly update and patch systems to reduce vulnerabilities that attackers could exploit. Close any ports that put the machines at risk such as RDP, SSH, Etc.
+
+## 3. Enhancing Monitoring and Logging
+- The presence of log entries without IP addresses indicates gaps in monitoring:
+  - Ensure comprehensive logging across all systems to maintain a full audit trail.
+  - Use centralized log management tools to aggregate and analyze logs for quicker response times.
+
+## 4. Proactive Detection
+- Many failed logins suggest the need for active threat detection:
+  - Implement intrusion detection and prevention systems (IDPS) to identify and block malicious attempts in real-time.
+  - Use AI-powered log analytics to detect patterns indicative of coordinated attacks.
+  - Role-Based Access Control: Restrict administrative privileges to reduce the number of high-value targets.
+
+## 5. Response to Incidents
+- Regular review of log data to help identify compromised accounts.
+- Establish an incident response plan to address potential breaches detected through log analysis.
+
+---
+
+# Closing notes
