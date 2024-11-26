@@ -255,5 +255,5 @@ Temporal Trends indicated deliberate timing of attacks, with peaks in failed log
 This lab provided valuable insights into how attackers probe cloud environments, especially focusing on weak login credentials, poor network security configurations, and lapses in monitoring. By improving security practices based on these findings—such as implementing stricter access controls, strengthening defenses against brute-force attacks, and continuously improving detection capabilities—you can significantly enhance the overall security posture of your cloud infrastructure. The lessons learned from this lab are not just theoretical but can be directly applied to protect live environments from evolving cyber threats.
 
 
-Yanni. 
+Best regards, Yanni X.
 
