@@ -2,7 +2,7 @@
 ![winnie-the-pooh-pooh](https://github.com/user-attachments/assets/64bc52e5-92bc-4800-ac5f-946360d274c8)
 
 ## Objective
-This Honey Pot Lab aimed to establish a controlled environment for monitoring and analyzing live cyber attacks occurring globally. The primary focus was to ingest and analyze logs within a Security Information and Event Management (SIEM) system, providing insights into real-world attack patterns and enhancing defensive strategies. This project was to develop my practical skills in cloud security, ensuring that the configured systems effectively detect and respond to potential threats. Ultimately, the objective is to validate the security configurations through testing, ensuring a robust security posture in a cloud environment.
+The aim of this honeypot lab is to create a controlled environment for monitoring and analyzing live cyber-attacks in real time. The focus is on ingesting and analyzing logs in a Security Information and Event Management (SIEM) system to provide insights into global attack patterns.
 
 ## Skills Learned
 - Advanced understanding of SIEM concepts and practical application.
@@ -243,6 +243,16 @@ These times could correlate to presumed "off-hours" for some geographic regions,
 ---
 
 # Closing notes
-The analysis revealed significant insights into potential security vulnerabilities and attack patterns. Key findings include frequent failed login attempts targeting privileged accounts, and diverse geographic origins of the attacks. These observations suggest coordinated efforts to exploit weak security measures, especially during off-hours when systems may be less monitored. Events like the shutdown and startup of the event logging service, firewall operations, and changes to system time raise concerns about potential tampering with logging mechanisms or configurations that may be exploited to evade detection. Frequent occurrences of privilege assignments and user group enumerations show attempts to escalate permissions or gather reconnaissance on account hierarchies, while the creation of new processes and cryptographic operations may indicate active exploitation or malware execution. Temporal trends, showing peaks during specific hours, highlight deliberate timing of attacks to exploit presumed periods of lower monitoring. Together, these logs reveal a combination of operational activity and concerted probing, requiring enhanced logging, monitoring, and defensive measures to mitigate evolving threats.
+This analysis revealed several key insights into potential security vulnerabilities and attack patterns. Frequent failed login attempts targeting privileged accounts, such as "Administrator" and "VMADMIN," highlighted the need for stronger access controls and more proactive monitoring. The diverse geographic sources of these attacks suggest a wide range of malicious actors, potentially utilizing botnets or automated attack tools to conduct brute-force login attempts.
 
+Events like the shutdown and startup of the event logging service, along with changes to system time, raised concerns about the potential tampering of logging mechanisms to evade detection. These findings underscore the importance of maintaining tamper-proof logging systems, which are critical for detecting and responding to attacks.
+
+The analysis of privilege escalation attempts and user group enumerations revealed that attackers are likely conducting reconnaissance to gain higher-level access or escalate their privileges. The creation of new processes and cryptographic operations further suggests active exploitation or the presence of malware. These patterns emphasize the need for robust endpoint detection and response (EDR) solutions, as well as continuous monitoring of system processes and activities.
+
+Temporal Trends indicated deliberate timing of attacks, with peaks in failed login attempts during late afternoon and early evening hours (UTC), potentially exploiting presumed "off-hours" for monitoring. This highlights the need for 24/7 monitoring and response capabilities, as well as the importance of time-based anomaly detection systems.
+
+# Final Thoughts:
+This lab provided valuable insights into how attackers probe cloud environments, especially focusing on weak login credentials, poor network security configurations, and lapses in monitoring. By improving security practices based on these findings—such as implementing stricter access controls, strengthening defenses against brute-force attacks, and continuously improving detection capabilities—you can significantly enhance the overall security posture of your cloud infrastructure. The lessons learned from this lab are not just theoretical but can be directly applied to protect live environments from evolving cyber threats.
+
+- Yanni. 
 
