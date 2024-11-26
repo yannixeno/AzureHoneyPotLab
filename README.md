@@ -60,17 +60,17 @@ This Honey Pot Lab aimed to establish a controlled environment for monitoring an
   - Name it (e.g., "Windows Events to Sentinel").
   - Select "Honeypott VM" as the resource and choose "All Security Events."
 
-  ![image](https://github.com/user-attachments/assets/94b46108-0649-4029-822b-93673965ce81)
+![image](https://github.com/user-attachments/assets/94b46108-0649-4029-822b-93673965ce81)
 
-  ![image](https://github.com/user-attachments/assets/29f4e6da-9efb-44a8-a75c-f2666e6fc65f)
+![image](https://github.com/user-attachments/assets/29f4e6da-9efb-44a8-a75c-f2666e6fc65f)
 
-  ![image](https://github.com/user-attachments/assets/6661597a-3551-4af4-bc7e-3bee1a791086)
+![image](https://github.com/user-attachments/assets/6661597a-3551-4af4-bc7e-3bee1a791086)
 
-  ![image](https://github.com/user-attachments/assets/7580a2e1-1871-4a52-b026-a9d9e9c91ef7)
+![image](https://github.com/user-attachments/assets/7580a2e1-1871-4a52-b026-a9d9e9c91ef7)
 
-  ![image](https://github.com/user-attachments/assets/72707aed-07fc-4ffc-a555-6458ca6dea81)
+![image](https://github.com/user-attachments/assets/72707aed-07fc-4ffc-a555-6458ca6dea81)
 
-  ![image](https://github.com/user-attachments/assets/4353cb86-9e6c-43aa-a417-52c379b35ce9)
+![image](https://github.com/user-attachments/assets/4353cb86-9e6c-43aa-a417-52c379b35ce9)
 
 
 ### Step 5: Configure Sentinel Rules for Alerts
@@ -102,11 +102,38 @@ This Honey Pot Lab aimed to establish a controlled environment for monitoring an
 
 ![image](https://github.com/user-attachments/assets/30b1dba8-3394-4dab-b9b3-e02814de7f22)
 
-# What Did I Find?
+
+
+# The Analysis
 
 ## 1. Frequent Security Events
 - The dataset predominantly consists of EventID 4625, which corresponds to "An account failed to log on." This indicates repeated failed authentication attempts.
-- These events show definite security risks, such as brute-force attacks & unauthorized access attempts.
+- These events show definite security risks, particularly brute-force attacks & unauthorized access attempts.
+
+## All attacks that were performed on my Honey Pot 
+
+| **Attacks performed**                                 | **Event ID** | **Event Description**                                                                                   |
+|-------------------------------------------------------|--------------|---------------------------------------------------------------------------------------------------------|
+| **Event Logging Service Shutdown**                   | 1100         | The event logging service has shut down.                                                               |
+| **Windows Startup**                                   | 12           | The operating system has started up.                                                                   |
+| **System Time Change**                                | 4616         | The system time was changed.                                                                           |
+| **Successful Account Logon**                         | 4624         | An account was successfully logged on.                                                                 |
+| **Failed Account Logon**                              | 4625         | An account failed to log on.                                                                           |
+| **Logon Using Explicit Credentials**                 | 4648         | A logon was attempted using explicit credentials.                                                      |
+| **Special Privileges Assigned to Logon**             | 4672         | Special privileges assigned to new logon.                                                              |
+| **New Process Creation**                              | 4688         | A new process has been created.                                                                        |
+| **Primary Token Assigned to Process**                | 4696         | A primary token was assigned to a process.                                                             |
+| **Local Group Membership Enumeration**               | 4798         | A user's local group membership was enumerated.                                                        |
+| **Security-Enabled Group Enumeration**               | 4799         | A security-enabled local group membership was enumerated.                                              |
+| **Boot Configuration Data Loaded**                   | 100          | Boot Configuration Data loaded.                                                                        |
+| **Per-User Audit Policy Created**                    | 4906         | The Per-user audit policy table was created.                                                           |
+| **Windows Firewall Service Started**                 | 5032         | Windows Firewall Service has started successfully.                                                     |
+| **Windows Firewall Driver Started**                  | 2004         | The Windows Firewall Driver has started successfully.                                                  |
+| **Key File Operation**                                | 4662         | An operation was performed on an object.                                                              |
+| **Key Migration Operation**                          | 4692         | A key migration operation was performed.                                                               |
+| **Cryptographic Operation**                          | 5061         | Cryptographic operation.                                                                               |
+
+---
 
 ## 2. Targeted Accounts
 - Accounts such as `ADMINISTRATOR`, `DELL`, and `VMADMIN` were repeatedly targeted. These accounts hold elevated privileges, making them attractive to attackers.
@@ -216,3 +243,6 @@ These times could correlate to presumed "off-hours" for some geographic regions,
 ---
 
 # Closing notes
+The analysis revealed significant insights into potential security vulnerabilities and attack patterns. Key findings include frequent failed login attempts targeting privileged accounts, and diverse geographic origins of the attacks. These observations suggest coordinated efforts to exploit weak security measures, especially during off-hours when systems may be less monitored. Events like the shutdown and startup of the event logging service, firewall operations, and changes to system time raise concerns about potential tampering with logging mechanisms or configurations that may be exploited to evade detection. Frequent occurrences of privilege assignments and user group enumerations show attempts to escalate permissions or gather reconnaissance on account hierarchies, while the creation of new processes and cryptographic operations may indicate active exploitation or malware execution. Temporal trends, showing peaks during specific hours, highlight deliberate timing of attacks to exploit presumed periods of lower monitoring. Together, these logs reveal a combination of operational activity and concerted probing, requiring enhanced logging, monitoring, and defensive measures to mitigate evolving threats.
+
+
