@@ -2,14 +2,14 @@
 ![winnie-the-pooh-pooh](https://github.com/user-attachments/assets/64bc52e5-92bc-4800-ac5f-946360d274c8)
 
 ## Objective
-The aim of this honeypot lab is to create a controlled environment for monitoring and analyzing live cyber-attacks in real time. The focus is on ingesting and analyzing logs in a Security Information and Event Management (SIEM) system to provide insights into global attack patterns.
+The aim of this honeypot lab is to create a controlled environment for monitoring and analyzing live cyber-attacks in real time. The focus is on ingesting and analyzing logs in a Security Information and Event Management (SIEM) system to provide insights into global attack patterns followed by a comprehensive analysis and report.
 
 ## Skills Learned
 - Advanced understanding of SIEM concepts and practical application.
 - Proficiency in analyzing and interpreting logs.
 - Ability to generate and recognize attack signatures and patterns.
 - Enhanced knowledge of network protocols and security vulnerabilities.
-- Development of critical thinking and problem-solving skills in security.
+- Development of critical thinking and problem-solving skills.
 
 ## Steps
 
