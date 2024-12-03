@@ -58,7 +58,7 @@ The aim of this honeypot lab is to create a controlled environment for monitorin
   - Install the AMA connector through the Content Hub and refresh your data connectors list.
 - Create a Data Collection Rule:
   - Name it (e.g., "Windows Events to Sentinel").
-  - Select "Honeypott VM" as the resource and choose "All Security Events."
+  - Select "Honeypot VM" as the resource and choose "All Security Events."
 
 ![image](https://github.com/user-attachments/assets/94b46108-0649-4029-822b-93673965ce81)
 
@@ -192,15 +192,15 @@ Just getting the ip's wasn't good enough for me - I wanted a visual display of t
 ![image](https://github.com/user-attachments/assets/a1b9e138-d593-4551-932d-8233eaee8bf7)
 
 ## 4. Temporal Trends
-- By examining the timestamps in `TimeGenerated [UTC]` and `TimeCollected [UTC]`, events can be analyzed for spikes in activity.
+- By examining the timestamps in `TimeGenerated [UTC]` and `TimeCollected [UTC]` ( I converted them into my local time - EST), events can be analyzed for spikes in activity.
 - Peaks in failed login attempts may align with specific times of day, suggesting targeted attacks during presumed off-hours.
 
-Peak Activity: The highest number of events occurred at 17:00 UTC, with 774 recorded events.
+Peak Activity: The highest number of events occurred at 12AM EST, with 774 recorded events.
 
 Other Busy Periods:
-18:00 UTC (671 events)
-19:00 UTC (602 events)
-16:00 UTC (587 events)
+1:00 AM EST (671 events)
+2:00 AM EST (602 events)
+12:00 AM EST (587 events)
 
 ![image](https://github.com/user-attachments/assets/6b28df34-e2c6-4784-ae90-29ee3f974ebf)
 
@@ -212,7 +212,7 @@ These times could correlate to presumed "off-hours" for some geographic regions,
 # Lessons learned from this
 
 ## 1. Strengthening Account Security
-- The prevalence of failed login attempts targeting administrator-level accounts underlines the need for stringent security measures:
+- The prevalence of failed login attempts targeting admin-level accounts
   - Enforce strong password policies to prevent brute force attacks.
   - Implement multi-factor authentication (MFA) adding an extra layer of defense.
 
@@ -231,7 +231,7 @@ These times could correlate to presumed "off-hours" for some geographic regions,
   - Use centralized log management tools to aggregate and analyze logs for quicker response times.
 
 ## 4. Proactive Detection
-- Many failed logins suggest the need for active threat detection:
+- Many failed logins suggest the need for further enhanced real time threat detection:
   - Implement intrusion detection and prevention systems (IDPS) to identify and block malicious attempts in real-time.
   - Use AI-powered log analytics to detect patterns indicative of coordinated attacks.
   - Role-Based Access Control: Restrict administrative privileges to reduce the number of high-value targets.
@@ -243,13 +243,13 @@ These times could correlate to presumed "off-hours" for some geographic regions,
 ---
 
 # Closing notes
-This analysis revealed several key insights into potential security vulnerabilities and attack patterns. Frequent failed login attempts targeting privileged accounts, such as "Administrator" and "VMADMIN," highlighted the need for stronger access controls and more proactive monitoring. The diverse geographic sources of these attacks suggest a wide range of malicious actors, potentially utilizing botnets or automated attack tools to conduct brute-force login attempts.
+This analysis I made revealed several key insights into potential security vulnerabilities and attack patterns. Frequent failed login attempts targeting privileged accounts, such as "Administrator" and "VMADMIN," highlighted the need for stronger access controls and more proactive monitoring. The diverse geographic sources of these attacks suggest a wide range of malicious actors, utilizing botnets or automated attack tools to conduct brute-force login attempts.
 
 Events like the shutdown and startup of the event logging service, along with changes to system time, raised concerns about the potential tampering of logging mechanisms to evade detection. These findings underscore the importance of maintaining tamper-proof logging systems, which are critical for detecting and responding to attacks.
 
 The analysis of privilege escalation attempts and user group enumerations revealed that attackers are likely conducting reconnaissance to gain higher-level access or escalate their privileges. The creation of new processes and cryptographic operations further suggests active exploitation or the presence of malware. These patterns emphasize the need for robust endpoint detection and response (EDR) solutions, as well as continuous monitoring of system processes and activities.
 
-Temporal Trends indicated deliberate timing of attacks, with peaks in failed login attempts during late afternoon and early evening hours (UTC), potentially exploiting presumed "off-hours" for monitoring. This highlights the need for 24/7 monitoring and response capabilities, as well as the importance of time-based anomaly detection systems.
+Temporal Trends indicated deliberate timing of attacks, with peaks in failed login attempts during obscure times, potentially exploiting presumed "off-hours" for monitoring. This highlighted the need for 24/7 monitoring and response capabilities, as well as the importance of time-based anomaly detection systems.
 
 # Final Thoughts:
-This lab provided valuable insights into how attackers probe cloud environments, especially focusing on weak login credentials, poor network security configurations, and lapses in monitoring. By improving security practices based on these findings—such as implementing stricter access controls, strengthening defenses against brute-force attacks, and continuously improving detection capabilities—you can significantly enhance the overall security posture of your cloud infrastructure. The lessons learned from this lab are not just theoretical but can be directly applied to protect live environments from evolving cyber threats.
+This lab provided valuable insights into how attackers probe cloud environments, especially focusing on weak login credentials, poor network security configurations, and lapses in monitoring. By improving security practices based on these findings—such as implementing stricter access controls, strengthening defenses against brute-force attacks, and continuously improving detection capabilities—you can significantly enhance the overall security posture of the infrastructure. The lessons learned from this lab are not just theoretical but can be directly applied to protect live environments from evolving cyber threats.
