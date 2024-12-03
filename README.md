@@ -18,6 +18,8 @@ The aim of this honeypot lab is to create a controlled environment for monitorin
 - Sign up and verify your account—you’ll receive $200 in free credits.
 - Provide necessary personal information to complete registration.
 
+![image](https://github.com/user-attachments/assets/78fe0bb2-a2b1-479c-9fde-5e50aafa215e)
+
 ### Step 2: Create a Virtual Machine (VM)
 - In Azure, create a new Virtual Machine (VM) to serve as your monitored device.
 - Set up a new Resource Group (e.g., name it "HoneypotVM").
